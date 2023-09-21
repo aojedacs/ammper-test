@@ -28,9 +28,11 @@ export default function Accounts({ accounts, accountId }) {
           {accounts?.map((account) => {
             return (
               <tr
+                key={account.id}
+                id={account.id}
                 onClick={(e) => {
                   console.log(e.target.id);
-                  accountId(e.target.id)
+                  accountId(e.target.id);
                 }}
                 className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
               >
