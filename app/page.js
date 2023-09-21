@@ -71,18 +71,18 @@ export default function Home() {
     <>
       <div className="grid grid-cols-1 gap-4">
         <div className="relative overflow-x-auto">
-          <div class="flex items-center justify-center py-12 flex-wrap">
-            <h2 class="text-4xl font-extrabold dark:text-white">Accounts</h2>
+          <div className="flex items-center justify-center py-12 flex-wrap">
+            <h2 className="text-4xl font-extrabold dark:text-white">Accounts</h2>
           </div>
-          <div class="flex items-center justify-center py-12 flex-wrap">
+          <div className="flex items-center justify-center py-12 flex-wrap">
             <Accounts accounts={accounts} accountId={setAccountId} />
           </div>
-          <div class="flex items-center justify-center py-12 flex-wrap">
-            <h2 class="text-4xl font-extrabold dark:text-white">
+          <div className="flex items-center justify-center py-12 flex-wrap">
+            <h2 className="text-4xl font-extrabold dark:text-white">
               Transactions
             </h2>
           </div>
-          <div class="flex items-center justify-center py-12 flex-wrap">
+          <div className="flex items-center justify-center py-12 flex-wrap">
             <TransactionsTable transactions={transactions} />
           </div>
         </div>

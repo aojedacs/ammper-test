@@ -25,10 +25,10 @@ export default function Accounts({ accounts, accountId }) {
           </tr>
         </thead>
         <tbody>
-          {accounts?.map((account) => {
+          {accounts?.map((account, index) => {
             return (
               <tr
-                key={account.id}
+                key={index}
                 id={account.id}
                 onClick={(e) => {
                   console.log(e.target.id);
@@ -37,7 +37,7 @@ export default function Accounts({ accounts, accountId }) {
                 className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
               >
                 <th
-                  key={account.id}
+                  key={index}
                   id={account.id}
                   scope="row"
                   className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
