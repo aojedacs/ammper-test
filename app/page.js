@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
-import TransactionsTable from "./TransactionsTable";
-import Accounts from "./Accounts";
+import TransactionsTable from "./components/TransactionsTable";
+import Accounts from "./components/Accounts";
 
 export default function Home() {
  
