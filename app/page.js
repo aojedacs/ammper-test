@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
+import TransactionsTable from "./TransactionsTable";
 
 export default function Home() {
   // const transactions = [
@@ -648,7 +649,7 @@ export default function Home() {
     };
 
     fetch(
-      "https://sandbox.belvo.com/api/transactions/?page=1&link=5b85b4c6-a834-4071-a97f-4facc5935126&account=1aaa012b-72fa-4ab6-9980-a2c83ae755b5",
+      "https://sandbox.belvo.com/api/transactions/?page=1&link=539b23a6-9cb9-4498-8f1d-2659ea5b469b&account=38dafcc5-db0c-40d3-897d-7998c6c88400",
       requestOptions
     )
       .then((response) => response.text())
@@ -664,49 +665,7 @@ export default function Home() {
       <div className="md:container md:mx-auto">
         <div className="grid grid-cols-1 gap-4">
           <div className="relative overflow-x-auto">
-            <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-              <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                  <tr>
-                    <th scope="col" className="px-6 py-3">
-                      Description
-                    </th>
-                    <th scope="col" className="px-6 py-3">
-                      Amount
-                    </th>
-                    <th scope="col" className="px-6 py-3">
-                      Category
-                    </th>
-                    <th scope="col" className="px-6 py-3">
-                      Status
-                    </th>
-                    <th scope="col" className="px-6 py-3">
-                      Date
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {transactions?.map((transaction) => {
-                    return (
-                      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <th
-                          scope="row"
-                          class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                        >
-                          {transaction.description}
-                        </th>
-                        <td className="px-6 py-4">${transaction.amount} MXN</td>
-                        <td className="px-6 py-4">{transaction.category ? transaction.category: "N/A"}</td>
-                        <td className="px-6 py-4">{transaction.status}</td>
-                        <td className="px-6 py-4">
-                          {new Date(transaction.collected_at).toString()}
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
+            <TransactionsTable transactions={transactions} />
           </div>
         </div>
       </div>
