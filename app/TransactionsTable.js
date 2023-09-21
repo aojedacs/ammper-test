@@ -7,10 +7,10 @@ export default function TransactionsTable({ transactions }) {
       if (amount > 0) {
         return <p class="text-green-500">${amount} MXN</p>;
       } else {
-        return <p class="text-gray-50">${amount} MXN</p>;
+        return <p class="text-gray-50">+ ${amount} MXN</p>;
       }
     } else {
-      return <p class="text-red-600">${amount} MXN</p>;
+      return <p class="text-red-600">- ${amount} MXN</p>;
     }
   };
 
